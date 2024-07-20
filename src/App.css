@@ -97,8 +97,7 @@
 
 .navbar {
   background-color: #333;
-  color: white;
-  padding: 1rem;
+  padding: 1rem 0;
 }
 
 .navbar-container {
@@ -107,33 +106,146 @@
   align-items: center;
   max-width: 1200px;
   margin: 0 auto;
+  padding: 0 1rem;
 }
 
 .navbar-brand {
-  color: white;
-  text-decoration: none;
+  color: #fff;
   font-size: 1.5rem;
+  text-decoration: none;
   font-weight: bold;
 }
 
 .nav-menu {
   display: flex;
-  list-style: none;
+  list-style-type: none;
   margin: 0;
   padding: 0;
-}
-
-.nav-item {
-  margin-left: 1rem;
+  gap: 1rem;
 }
 
 .nav-link {
-  color: white;
+  color: #fff;
   text-decoration: none;
-  font-size: 1rem;
-  transition: color 0.3s ease;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .nav-link:hover {
-  color: #61dafb;
+  background-color: #fff;
+  color: #333;
+}
+
+/* Hamburger menu icon */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.hamburger span {
+  height: 3px;
+  width: 25px;
+  background-color: #fff;
+  margin: 2px 0;
+  transition: 0.4s;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .navbar-container {
+    flex-wrap: wrap;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-menu {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem 0;
+  }
+
+  .nav-menu.active {
+    display: flex;
+  }
+
+  .nav-item {
+    width: 100%;
+    text-align: center;
+  }
+
+  .nav-link {
+    padding: 0.75rem 1rem;
+    display: block;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar-brand {
+    font-size: 1.2rem;
+  }
+
+  .nav-link {
+    padding: 0.5rem 0.75rem;
+  }
+}
+
+.user-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.user-title {
+  color: white;
+  text-align: center;
+}
+
+.user-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.user-item {
+  background-color: black;
+  margin: 10px 0;
+  padding: 15px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+}
+
+.user-item:hover {
+  background-color: aliceblue;
+  color: black;
+}
+
+.load-more-btn {
+  display: block;
+  width: 200px;
+  margin: 20px auto;
+  padding: 10px;
+  background-color: #007bff;
+  color: black;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.load-more-btn:hover {
+  background-color: #0056b3;
+}
+
+.user-footer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  color: #666;
 }
